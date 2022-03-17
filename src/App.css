@@ -1,0 +1,275 @@
+/*body {*/
+/*    background-image: url("img/paper-flower-background-g980ae255b_1920.jpg");*/
+/*    background-size: 100%;*/
+/*}*/
+
+/*.main_container {*/
+/*    margin: 0 auto;*/
+/*    max-width: 600px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+.todolist {
+    /*margin: 0 auto 20px auto;*/
+    padding: 10px;
+    display: flex;
+    /*border-radius: 20px;*/
+    /*background-color: rgba(189, 240, 240, 0.8);*/
+    /*border: 2px solid black;*/
+    max-width: 250px;
+    min-height: 300px;
+}
+
+/*.header {*/
+/*    font-style: italic;*/
+/*    font-size: 25px;*/
+/*    text-align: center;*/
+/*    margin: 5px;*/
+/*}*/
+
+/*H3 {*/
+/*    text-shadow: -1px -1px #FFF,*/
+/*    -2px -2px #FFF,*/
+/*    -1px 1px #FFF,*/
+/*    -2px 2px #FFF,*/
+/*    1px 1px #FFF,*/
+/*    2px 2px #FFF,*/
+/*    1px -1px #FFF,*/
+/*    2px -2px #FFF,*/
+/*    -3px -3px 2px #BBB,*/
+/*    -3px 3px 2px #BBB,*/
+/*    3px 3px 2px #BBB,*/
+/*    3px -3px 2px #BBB;*/
+/*    color: rgba(255, 37, 0, 0.95);*/
+/*    transition: all 1s;*/
+/*}*/
+
+/*H3:hover {*/
+/*    color: yellowgreen;*/
+/*}*/
+
+.error {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
+    max-width: 200px;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+/*.is-done {*/
+/*    opacity: 0.5;*/
+/*    color: rgba(0, 10, 99, 0.95)*/
+/*}*/
+
+/*.button {*/
+/*    border-radius: 5px;*/
+/*}*/
+
+
+/*.button9 {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    color: #777674;*/
+/*    font-weight: bold;*/
+/*    text-decoration: none;*/
+/*    text-shadow: rgba(255, 255, 255, .5) 1px 1px, rgba(100, 100, 100, .3) 3px 7px 3px;*/
+/*    user-select: none;*/
+/*    outline: none;*/
+/*    border-radius: 3px / 100%;*/
+/*    background-image: linear-gradient(45deg, rgba(255, 255, 255, .0) 30%, rgba(255, 255, 255, .8), rgba(255, 255, 255, .0) 70%),*/
+/*    linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, .3)),*/
+/*    linear-gradient(to right, rgba(125, 125, 125, 1), rgba(255, 255, 255, .9) 45%, rgba(125, 125, 125, .5)),*/
+/*    linear-gradient(to right, rgba(125, 125, 125, 1), rgba(255, 255, 255, .9) 45%, rgba(125, 125, 125, .5)),*/
+/*    linear-gradient(to right, rgba(223, 190, 170, 1), rgba(255, 255, 255, .9) 45%, rgba(223, 190, 170, .5)),*/
+/*    linear-gradient(to right, rgba(223, 190, 170, 1), rgba(255, 255, 255, .9) 45%, rgba(223, 190, 170, .5));*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px;*/
+/*    background-position: 200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);*/
+/*    box-shadow: rgba(0, 0, 0, .5) 3px 10px 10px -10px;*/
+/*}*/
+
+/*.button9:hover {*/
+/*    transition: .5s linear;*/
+/*    background-position: -200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);*/
+/*}*/
+
+/*.button9:active {*/
+/*    top: 1px;*/
+/*}*/
+
+/*.input-add {*/
+/*    border-radius: 10px;*/
+/*}*/
+
+/*.input-add:focus {*/
+/*    box-shadow: 0 0 10px rgba(37, 59, 255, 0.8);*/
+/*}*/
+
+/*.active-filter {*/
+/*    position: relative;*/
+/*    color: white;*/
+/*    font-weight: bold;*/
+/*    text-decoration: none;*/
+/*    text-shadow: -1px -1px #000;*/
+/*    user-select: none;*/
+/*    !*padding: .8em 2em;*!*/
+/*    outline: none;*/
+/*    background-color: deepskyblue;*/
+/*    background-image: linear-gradient(45deg, rgba(255, 255, 255, .0) 30%, rgba(255, 255, 255, .8), rgba(255, 255, 255, .0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255, 255, 255, .7) 0%, rgba(255, 255, 255, .5) 50%, rgba(0, 0, 0, 0) 50%);*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: 200% 100%, auto;*/
+/*    background-position: 200% 0, 0 0;*/
+/*    box-shadow: rgba(0, 0, 0, .3) 0 2px 5px;*/
+/*}*/
+
+/*.active-filter:active {*/
+/*    top: 1px;*/
+/*    box-shadow: none;*/
+/*}*/
+
+/*.active-filter:hover {*/
+/*    transition: .5s linear;*/
+/*    background-position: -200% 0, 0 0;*/
+/*}*/
+
+
+/*.checkbox-other {*/
+/*    display: block;*/
+/*    margin: 0 0 10px 0;*/
+/*    cursor: default;*/
+/*    user-select: none;*/
+/*    position: relative;*/
+/*}*/
+
+/*!*.checkbox-other input[type=checkbox] {*!*/
+/*!*    position: absolute;*!*/
+/*!*    z-index: -1;*!*/
+/*!*    opacity: 0;*!*/
+/*!*    display: block;*!*/
+/*!*    width: 0;*!*/
+/*!*    height: 0;*!*/
+/*!*}*!*/
+
+/*!*.checkbox-other span {*!*/
+/*!*    display: inline-block;*!*/
+/*!*    position: relative;*!*/
+/*!*    padding: 0 0 0 35px;*!*/
+/*!*    line-height: 22px;*!*/
+/*!*}*!*/
+
+/*!*.checkbox-other span:before {*!*/
+/*!*    content: "";*!*/
+/*!*    display: inline-block;*!*/
+/*!*    width: 22px;*!*/
+/*!*    height: 22px;*!*/
+/*!*    position: absolute;*!*/
+/*!*    left: 0;*!*/
+/*!*    top: 0;*!*/
+/*!*    background: url(img/checkbox-3.png) 0 0 no-repeat;*!*/
+/*!*}*!*/
+
+/*li {*/
+/*    list-style-type: none;*/
+
+/*}*/
+
+/*li span {*/
+/*    cursor: default;*/
+/*}*/
+
+
+/*!* Checked *!*/
+/*.checkbox-other input[type=checkbox]:checked + span:before {*/
+/*    background-image: url(img/checkbox-2.png);*/
+/*}*/
+
+/*!* Focus *!*/
+/*.focused span:before {*/
+/*    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);*/
+/*}*/
+
+/*!* Hover *!*/
+/*.checkbox-other span:hover:before {*/
+/*    filter: brightness(110%);*/
+
+/*}*/
+
+/*!* Active *!*/
+/*.checkbox-other span:active:before {*/
+/*    filter: brightness(80%);*/
+/*}*/
+
+/*!* Disabled *!*/
+/*.checkbox-other input[type=checkbox]:disabled + span {*/
+/*    color: #666;*/
+
+/*}*/
+
+/*.checkbox-other input[type=checkbox]:disabled + span:before {*/
+/*    filter: grayscale(100%);*/
+/*    opacity: 0.6;*/
+
+/*}*/
+
+/*.button_filter {*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*}*/
+
+/*.container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    margin: auto;*/
+
+/*}*/
+
+
+/*.add_task {*/
+/*    flex: 1 1 auto;*/
+/*}*/
+
+/*.tasks_filter {*/
+
+/*}*/
+
+/*.button_deleted {*/
+/*    !*display: flex;*!*/
+/*    !*justify-content: flex-end;*!*/
+/*}*/
+
+/*.main {*/
+/*    min-height: 180px;*/
+/*}*/
+
+/*.button_deleted_toDolist {*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*}*/
+
+/*.removeToDoList {*/
+/*    background-color: #FFFFFF;*/
+/*    border-radius: 20px;*/
+/*}*/
+
+/*.removeToDoList:hover {*/
+/*    background-color: yellow;*/
+/*}*/
+
+/*.addTodolist {*/
+/*    margin: 10px;*/
+/*}*/
+
+
+/*!*.labelcontainer {*!*/
+/*!*    display: flex;*!*/
+/*!*    min-width: 100px;*!*/
+/*!*    border: 1px solid black;*!*/
+/*!*}*!*/
+
+

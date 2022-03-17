@@ -1,0 +1,8 @@
+.input {
+    border-radius: 10px;
+    width:120px;
+}
+
+.input:focus {
+    box-shadow: 0 0 10px rgba(37, 59, 255, 0.8);
+}
