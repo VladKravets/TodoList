@@ -54,12 +54,12 @@ export const removeTodolistAC = (id: string): ActionRemoveTodolist => {
         id: id
     }
 }
-export const addTodolistAC = (newTodolistTitle: string,id:string): ActionAddTodolist => {
+export const addTodolistAC = (newTodolistTitle: string): ActionAddTodolist => {
     return {
         type: "ADD-TODOLIST",
         title: newTodolistTitle,
         todolistId:v1()
-    }
+    }as const
 }
 export const changeTodolistFilterAC = (newFilter: FilterValuesType, id: string): ActionChangeTodolistFilter => {
     return {
