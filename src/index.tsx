@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {createTheme, ThemeProvider} from "@material-ui/core/styles";
 import {teal} from "@material-ui/core/colors";
 import {CssBaseline} from "@material-ui/core";
+import App from "./App";
+import {Provider} from "react-redux";
+import {store} from "./store/store";
 
 const theme = createTheme({
     palette: {
         type: 'dark',
         primary: {
-            main:teal[700],
+            main: teal[700],
         },
         secondary: {
             main: '#f44336',
@@ -22,7 +24,9 @@ const theme = createTheme({
 ReactDOM.render(
     <ThemeProvider theme={theme}>
         <CssBaseline>
-            <App/>
+            <Provider store={store}>
+                <App/>
+            </Provider>
         </CssBaseline>
     </ThemeProvider>
     , document.getElementById('root'));
