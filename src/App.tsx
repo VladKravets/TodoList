@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import './App.css';
 import {TaskType, Todolist} from './components/Todolist/Todolist';
 import AddItemForm from "./components/Item/AddItemForm";
@@ -30,37 +30,38 @@ function App() {
     const dispatch = useDispatch()
 
 
-    function removeTask(id: string, todolistId: string) {
+    const removeTask =useCallback((id: string, todolistId: string)=> {
         dispatch(removeTaskAC(id, todolistId))
-    }
+    },[])
 
-    function addTask(title: string, todolistId: string) {
+    const addTask=useCallback((title: string, todolistId: string)=> {
         dispatch(addTaskAC(title, todolistId))
-    }
+    },[])
 
-    function changeStatus(id: string, isDone: boolean, todolistId: string) {
+    const changeStatus=useCallback((id: string, isDone: boolean, todolistId: string)=> {
         dispatch(changeTaskStatusAC(id, isDone, todolistId))
-    }
+    },[])
 
-    function changeFilter(value: FilterValuesType, todolistId: string) {
+
+    const changeFilter=useCallback((value: FilterValuesType, todolistId: string)=> {
         dispatch(changeTodolistFilterAC(value, todolistId))
-    }
+    },[])
 
-    function removeTodolist(id: string) {
+    const removeTodolist=useCallback((id: string)=> {
         dispatch(removeTodolistAC(id))
-    }
+    },[])
 
-    function addNewTodolist(newTodolistTitle: string) {
+    const addNewTodolist=useCallback((newTodolistTitle: string)=> {
         dispatch(addTodolistAC(newTodolistTitle))
-    }
+    },[])
 
-    function changeTaskTitle(id: string, title: string, todolistId: string) {
+    const changeTaskTitle=useCallback((id: string, title: string, todolistId: string)=> {
         dispatch(changeTaskTitleAC(id, title, todolistId))
-    }
+    },[])
 
-    function changeTodolistTitle(title: string, todolistId: string) {
+    const changeTodolistTitle=useCallback((title: string, todolistId: string)=> {
         dispatch(changeTDTitleAC(title, todolistId))
-    }
+    },[])
 
     // UI:
     const todolistsComponents = todolists.map(tl => {
