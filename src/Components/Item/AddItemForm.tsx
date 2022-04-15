@@ -6,7 +6,7 @@ type AddItemFormPropsType = {
     addItem: (newTitle: string) => void
 }
 
-const AddItemForm: FC<AddItemFormPropsType> = (props) => {
+const AddItemForm: FC<AddItemFormPropsType> =React.memo( (props) => {
     const [title, setTitle] = useState("")
     const [error, setError] = useState<string | null>(null)
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -43,6 +43,6 @@ const AddItemForm: FC<AddItemFormPropsType> = (props) => {
             </IconButton>
         </div>
     );
-};
+});
 
 export default AddItemForm;
