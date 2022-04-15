@@ -32,36 +32,36 @@ function App() {
 
     const removeTask =useCallback((id: string, todolistId: string)=> {
         dispatch(removeTaskAC(id, todolistId))
-    },[])
+    },[dispatch])
 
     const addTask=useCallback((title: string, todolistId: string)=> {
         dispatch(addTaskAC(title, todolistId))
-    },[])
+    },[dispatch])
 
     const changeStatus=useCallback((id: string, isDone: boolean, todolistId: string)=> {
         dispatch(changeTaskStatusAC(id, isDone, todolistId))
-    },[])
+    },[dispatch])
 
 
     const changeFilter=useCallback((value: FilterValuesType, todolistId: string)=> {
         dispatch(changeTodolistFilterAC(value, todolistId))
-    },[])
+    },[dispatch])
 
     const removeTodolist=useCallback((id: string)=> {
         dispatch(removeTodolistAC(id))
-    },[])
+    },[dispatch])
 
     const addNewTodolist=useCallback((newTodolistTitle: string)=> {
         dispatch(addTodolistAC(newTodolistTitle))
-    },[])
+    },[dispatch])
 
     const changeTaskTitle=useCallback((id: string, title: string, todolistId: string)=> {
         dispatch(changeTaskTitleAC(id, title, todolistId))
-    },[])
+    },[dispatch])
 
     const changeTodolistTitle=useCallback((title: string, todolistId: string)=> {
         dispatch(changeTDTitleAC(title, todolistId))
-    },[])
+    },[dispatch])
 
     // UI:
     const todolistsComponents = todolists.map(tl => {
