@@ -68,12 +68,7 @@ function App() {
         const allTodolistTasks = tasks[tl.id];
         let tasksForTodolist = allTodolistTasks;
 
-        if (tl.filter === "active") {
-            tasksForTodolist = allTodolistTasks.filter(tl => !tl.isDone);
-        }
-        if (tl.filter === "completed") {
-            tasksForTodolist = allTodolistTasks.filter(tl => tl.isDone);
-        }
+
 
         return (
             <Grid item key={tl.id}>
