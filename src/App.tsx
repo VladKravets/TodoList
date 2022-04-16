@@ -65,9 +65,13 @@ function App() {
 
     // UI:
     const todolistsComponents = todolists.map(tl => {
-        const allTodolistTasks = tasks[tl.id];
-        let tasksForTodolist = allTodolistTasks;
-
+        let tasksForTodolist = tasks[tl.id]
+        if (tl.filter === 'completed') {
+            tasksForTodolist = tasks[tl.id].filter(f => f.isDone)
+        }
+        if (tl.filter === 'active') {
+            tasksForTodolist = tasks[tl.id].filter(f => !f.isDone)
+        }
 
 
         return (
