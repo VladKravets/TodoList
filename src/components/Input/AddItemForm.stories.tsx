@@ -1,6 +1,6 @@
 import React from 'react'
 import {action} from "@storybook/addon-actions";
-import {AddItemForm} from "../Input/AddItemForm";
+import {AddItemForm} from "./AddItemForm";
 
 
 export default {
@@ -8,7 +8,7 @@ export default {
     component: AddItemForm,
 }
 
-const callback = action('Click')
+const callback = action('New Title is')
 
 export const AddItemFormExample = () => {
 return <AddItemForm addItem={callback}/>
