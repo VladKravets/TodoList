@@ -1,15 +1,14 @@
 import React from 'react'
 import AppWithRedux from "./AppWithRedux";
-import {Provider} from "react-redux";
-import {store} from "./state/store";
+import {ReduxStoreProviderDecorator} from "./stories/decorators/ReduxStoreProviderDecorator";
+import {Meta} from "@storybook/react";
 
 export default {
     title: 'App component',
     component: AppWithRedux,
-}
+    decorators: [ReduxStoreProviderDecorator],
+} as Meta
 
 export const AppBaseExample = () => {
-    return <Provider store={store}>
-        <AppWithRedux/>
-    </Provider>
+    return <AppWithRedux/>
 }
