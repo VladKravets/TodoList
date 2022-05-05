@@ -13,7 +13,24 @@ type TodolistType = {
     title: string
 }
 
-
+export type TaskType = {
+    description: string
+    title: string
+    completed: boolean
+    status: number
+    priority: number
+    startDate: string
+    deadline: string
+    id: string
+    todoListId: string
+    order: number
+    addedDate: string
+}
+type GetTasksResponseType = {
+    error: string | null
+    totalCount: number
+    item: TaskType[]
+}
 
 const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.1/',
@@ -44,5 +61,23 @@ export const todolistAPI = {
     }
 }
 
+export const tasksAPI = {
+    getTasks(todolistId: string) {
+        let promise = instance.get<GetTasksResponseType>(`todo-lists/` + todolistId + `/tasks`)
+        return promise
+    },
+    createTask(title: string) {
+        let promise = instance.post<ResponseType<{ item: TaskType }>>(`todo-lists`, {title: "I created"})
+        return promise
+    },
+    deleteTask(todolistId: string, taskId: string) {
 
+        let promise = instance.delete(`todo-lists/${todolistId}/tasks/${taskId}`)
+        return promise
+    },
+    updateTaskTitle(todolistId: string, taskId: string, title: string) {
+        let promise = instance.put(`todo-lists/${todolistId}/tasks/${taskId}`, {title: 'Vlad cool man'})
+        return promise
+    }
+}
 
