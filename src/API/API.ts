@@ -26,10 +26,10 @@ export type TaskType = {
     order: number
     addedDate: string
 }
-type GetTasksResponseType = {
+type GetTasksResponseType<T> = {
     error: string | null
     totalCount: number
-    item: TaskType[]
+    item: T
 }
 
 const instance = axios.create({
@@ -63,20 +63,20 @@ export const todolistAPI = {
 
 export const tasksAPI = {
     getTasks(todolistId: string) {
-        let promise = instance.get<GetTasksResponseType>(`todo-lists/` + todolistId + `/tasks`)
+        let promise = instance.get<GetTasksResponseType<TaskType>>(`todo-lists/` + todolistId + `/tasks`)
         return promise
     },
     createTask(title: string) {
-        let promise = instance.post<ResponseType<{ item: TaskType }>>(`todo-lists`, {title: "I created"})
+        let promise = instance.post<GetTasksResponseType<{item: TaskType[]}>>(`todo-lists`, {title: "I created"})
         return promise
     },
     deleteTask(todolistId: string, taskId: string) {
 
-        let promise = instance.delete(`todo-lists/${todolistId}/tasks/${taskId}`)
+        let promise = instance.delete<GetTasksResponseType<TaskType>>(`todo-lists/${todolistId}/tasks/${taskId}`)
         return promise
     },
     updateTaskTitle(todolistId: string, taskId: string, title: string) {
-        let promise = instance.put(`todo-lists/${todolistId}/tasks/${taskId}`, {title: 'Vlad cool man'})
+        let promise = instance.put<GetTasksResponseType<TaskType>>(`todo-lists/${todolistId}/tasks/${taskId}`, {title: 'Vlad cool man'})
         return promise
     }
 }
