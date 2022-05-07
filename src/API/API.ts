@@ -16,7 +16,6 @@ type TodolistType = {
 export type TaskType = {
     description: string
     title: string
-    completed: boolean
     status: number
     priority: number
     startDate: string
@@ -25,6 +24,14 @@ export type TaskType = {
     todoListId: string
     order: number
     addedDate: string
+}
+export type UpdateTaskModelType={
+    description: string
+    title: string
+    status: number
+    priority: number
+    startDate: string
+    deadline: string
 }
 type GetTasksResponseType = {
     error: string | null
@@ -75,7 +82,7 @@ export const tasksAPI = {
         let promise = instance.delete<ResponseType>(`todo-lists/${todolistId}/tasks/${taskId}`)
         return promise
     },
-    updateTaskTitle(todolistId: string, taskId: string, title: string) {
+    updateTaskTitle(todolistId: string, taskId: string, model: UpdateTaskModelType) {
         let promise = instance.put<ResponseType>(`todo-lists/${todolistId}/tasks/${taskId}`, {title: 'Vlad cool man'})
         return promise
     }
