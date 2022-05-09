@@ -70,21 +70,16 @@ export const todolistAPI = {
 
 export const tasksAPI = {
     getTasks(todolistId: string) {
-        let promise = instance.get<GetTasksResponseType>(`todo-lists/` + todolistId + `/tasks`)
-        return promise
+        return  instance.get<GetTasksResponseType>(`todo-lists/${todolistId}/tasks`)
     },
-    createTask(title: string) {
-        let promise = instance.post<ResponseType>(`todo-lists`, {title: "I created"})
-        return promise
+    createTask(todolistId: string,taskTitle:string) {
+        return instance.post<ResponseType<TaskType>>(`todo-lists/${todolistId}/tasks`, {title: taskTitle})
     },
     deleteTask(todolistId: string, taskId: string) {
-
-        let promise = instance.delete<ResponseType>(`todo-lists/${todolistId}/tasks/${taskId}`)
-        return promise
+        return  instance.delete<ResponseType>(`todo-lists/${todolistId}/tasks/${taskId}`)
     },
-    updateTaskTitle(todolistId: string, taskId: string, model: UpdateTaskModelType) {
-        let promise = instance.put<ResponseType>(`todo-lists/${todolistId}/tasks/${taskId}`, {title: 'Vlad cool man'})
-        return promise
+    updateTask(todolistId: string, taskId: string, model: UpdateTaskModelType) {
+        return  instance.put<ResponseType>(`todo-lists/${todolistId}/tasks/${taskId}`, model)
     }
 }
 
