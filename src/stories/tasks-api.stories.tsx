@@ -46,7 +46,7 @@ export const DeleteTask = () => {
 
     return <div> {JSON.stringify(state)}</div>
 }
-export const UpdateTaskTitle = () => {
+export const UpdateTask = () => {
     const [state, setState] = useState<any>(null)
     const [taskTitle, setTaskTitle] = useState<string>('')
     const [todolistId, setTodolistId] = useState<string>('')
