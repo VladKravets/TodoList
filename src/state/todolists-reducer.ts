@@ -1,6 +1,5 @@
 import {v1} from 'uuid';
-import {todolistAPI, TodolistType} from "../API/API";
-import {Dispatch} from "redux";
+import {todolistsAPI, TodolistType} from "../API/API";
 import {ThunkAction} from "redux-thunk";
 
 export type RemoveTodolistActionType = {
@@ -101,14 +100,22 @@ export const setTodolistsAC = (todolists: Array<TodolistType>): SetTodolistType 
 
 
 //THUNKS
-export type ThunkProfileType = ThunkAction<void, Array<TodolistDomainType>, unknown, ActionsType>
+export type ThunkTodolistType = ThunkAction<void, Array<TodolistDomainType>, unknown, ActionsType>
 
 
-export const fetchTodolistsTC = ():ThunkProfileType => {
+export const fetchTodolistsTC = ():ThunkTodolistType => {
     return (dispatch) => {
-        todolistAPI.getTodolists()
+        todolistsAPI.getTodolists()
             .then((res) => {
                 dispatch(setTodolistsAC(res.data))
+            })
+    }
+}
+export const addTodolistTC=(title:string):ThunkTodolistType=>{
+    return (dispatch)=>{
+        todolistsAPI.createTodolist(title)
+            .then((res)=>{
+                dispatch(addTodolistAC(title))
             })
     }
 }
