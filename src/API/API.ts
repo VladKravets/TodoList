@@ -51,7 +51,7 @@ export type UpdateTaskModelType = {
 type GetTasksResponseType = {
     error: string | null
     totalCount: number
-    item: Array<TaskType>
+    items: Array<TaskType>
 }
 
 const instance = axios.create({
