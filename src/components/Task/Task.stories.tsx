@@ -1,7 +1,7 @@
 import React from 'react'
 import {action} from "@storybook/addon-actions";
 import {Task} from "./Task";
-import {TasksPriorities, TaskStatuses} from "../../API/API";
+import {TaskPriorities, TaskStatuses} from "../../API/API";
 
 
 export default {
@@ -23,7 +23,7 @@ export const AddItemFormExample = () => {
             task={{
                 id: '1', status: TaskStatuses.Completed, title: 'HTML',
                 todoListId: "todolistId1", startDate: '',
-                deadline: '', addedDate: '', order: 0, priority: TasksPriorities.Low, description: ''
+                deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low, description: ''
             }}
             todolistId={'todolistId1'}
         />
@@ -33,7 +33,7 @@ export const AddItemFormExample = () => {
             removeTask={callbackRemoveTask}
             task={{
                 id: '2', status: TaskStatuses.New, title: 'GraphQL', todoListId: "todolistId2", startDate: '',
-                deadline: '', addedDate: '', order: 0, priority: TasksPriorities.Low, description: ''
+                deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low, description: ''
             }}
             todolistId={'todolistId2'}
         />
