@@ -7,7 +7,7 @@ import {Menu} from '@material-ui/icons';
 import {
     addTodolistAC, addTodolistTC,
     changeTodolistFilterAC,
-    changeTodolistTitleAC, fetchTodolistsTC, FilterValuesType,
+    changeTodolistTitleAC, changeTodolistTitleTC, deleteTodolistTC, fetchTodolistsTC, FilterValuesType,
     removeTodolistAC, TodolistDomainType,
 } from './state/todolists-reducer';
 import {
@@ -76,15 +76,15 @@ function App() {
         dispatch(addTodolistTC(title));
     }, []);
 
-    const removeTodolist = useCallback(function (id: string) {
-        const action = removeTodolistAC(id);
-        dispatch(action);
-    }, [dispatch]);
+    const removeTodolist = useCallback(function (todolistId: string) {
+        //@ts-ignore
+        dispatch(deleteTodolistTC(todolistId));
+    }, []);
 
-    const changeTodolistTitle = useCallback((id: string, title: string) => {
-        const action = changeTodolistTitleAC(id, title);
-        dispatch(action);
-    }, [dispatch])
+    const changeTodolistTitle = useCallback((todolistId: string, title: string) => {
+        //@ts-ignore
+        dispatch(changeTodolistTitleTC(todolistId,title));
+    }, [])
 
 
     return (

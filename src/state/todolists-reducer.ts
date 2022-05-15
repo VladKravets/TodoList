@@ -119,4 +119,19 @@ export const addTodolistTC=(title:string):ThunkTodolistType=>{
             })
     }
 }
-
+export const deleteTodolistTC=(todolistId:string):ThunkTodolistType=>{
+    return (dispatch)=>{
+        todolistsAPI.deleteTodolist(todolistId)
+            .then((res)=>{
+                dispatch(removeTodolistAC(todolistId))
+            })
+    }
+}
+export const changeTodolistTitleTC=(todolistId:string,title:string):ThunkTodolistType=>{
+    return (dispatch)=>{
+        todolistsAPI.updateTodolist(todolistId,title)
+            .then((res)=>{
+                dispatch(changeTodolistTitleAC(todolistId,title))
+            })
+    }
+}
