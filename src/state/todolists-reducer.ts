@@ -18,29 +18,14 @@ export const todolistsReducer = (state: Array<TodolistDomainType> = initialState
             }, ...state]
         }
         case 'CHANGE-TODOLIST-TITLE': {
-            const todolist = state.find(tl => tl.id === action.id);
-            if (todolist) {
-                // если нашёлся - изменим ему заголовок
-                todolist.title = action.title;
-            }
-            return [...state]
+            return state.map(tl => tl.id === action.id ? {...tl, title: action.title} : tl)
         }
         case 'CHANGE-TODOLIST-FILTER': {
-            const todolist = state.find(tl => tl.id === action.id);
-            if (todolist) {
-                // если нашёлся - изменим ему заголовок
-                todolist.filter = action.filter;
-            }
-            return [...state]
+            return state.map(tl => tl.id === action.id ? {...tl, filter: action.filter} : tl)
         }
         case "SET-TODOLISTS": {
-            return action.todolists.map(tl => {
-                return {
-                    ...tl, filter: 'all'
-                }
-            })
+            return action.todolists.map(tl => ({...tl, filter: 'all'}))
         }
-
         default:
             return state;
     }
