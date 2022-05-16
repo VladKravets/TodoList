@@ -2,7 +2,17 @@ import React, {useCallback, useEffect} from 'react'
 import './App.css';
 import {Todolist} from '../featuries/Todolist/Todolist';
 import {AddItemForm} from '../components/Input/AddItemForm';
-import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from '@material-ui/core';
+import {
+    AppBar,
+    Button,
+    Container,
+    Grid,
+    IconButton,
+    LinearProgress,
+    Paper,
+    Toolbar,
+    Typography
+} from '@material-ui/core';
 import {Menu} from '@material-ui/icons';
 import {
     addTodolistTC,
@@ -18,6 +28,7 @@ import {
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from './store';
 import {TaskStatuses, TaskType} from "../API/API";
+import {RequestStatusType} from "./app-reducer";
 
 
 export type TasksStateType = {
@@ -85,7 +96,7 @@ function App() {
         dispatch(changeTodolistTitleTC(todolistId, title));
     }, [])
 
-
+    const status = useSelector<AppRootStateType,RequestStatusType>(state => state.app.status)
     return (
         <div className="App">
             <AppBar position="static">
@@ -99,6 +110,7 @@ function App() {
                     <Button color="inherit">Login</Button>
                 </Toolbar>
             </AppBar>
+            {status === 'loading' && <LinearProgress color="secondary"/>}
             <Container fixed>
                 <Grid container style={{padding: "20px"}}>
                     <AddItemForm addItem={addTodolist}/>
