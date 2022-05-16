@@ -1,12 +1,13 @@
-import {TasksStateType} from '../App';
+import {TasksStateType} from '../../../app/App';
 import {
     AddTodolistActionType,
     RemoveTodolistActionType,
-    SetTodolistType,
-} from './todolists-reducer';
-import {TaskStatuses, TaskType, todolistsAPI} from "../API/API";
+    SetTodolistType, TodolistDomainType,
+} from '../todolists-reducer';
+import {TaskStatuses, TaskType, todolistsAPI} from "../../../API/API";
 import {Dispatch} from "redux";
-import {AppRootStateType} from "./store";
+import {AppRootStateType} from "../../../app/store";
+import {ThunkAction} from "redux-thunk";
 
 export const tasksReducer = (state: TasksStateType = initialState, action: ActionsType): TasksStateType => {
     switch (action.type) {
@@ -89,7 +90,10 @@ export const fetchTasksAC = (todolistId: string, tasks: TaskType[]) => ({type: '
 
 
 //THUNKS
-export const fetchTasksTC = (todolistId: string) => (dispatch: Dispatch) => {
+export type ThunkTasksType = ThunkAction<void, TasksStateType, unknown, ActionsType>
+
+
+export const fetchTasksTC = (todolistId: string):ThunkTasksType => (dispatch: Dispatch) => {
     todolistsAPI.getTasks(todolistId)
         .then((res) => {
             const tasks = res.data.items
@@ -97,13 +101,13 @@ export const fetchTasksTC = (todolistId: string) => (dispatch: Dispatch) => {
             dispatch(action)
         })
 }
-export const deleteTaskTC = (todolistId: string, taskId: string) => (dispatch: Dispatch) => {
+export const deleteTaskTC = (todolistId: string, taskId: string):ThunkTasksType => (dispatch: Dispatch) => {
     todolistsAPI.deleteTask(todolistId, taskId)
         .then((res) => {
             dispatch(removeTaskAC(taskId, todolistId));
         })
 }
-export const addTaskTC = (title: string, todolistId: string) => (dispatch: Dispatch) => {
+export const addTaskTC = (title: string, todolistId: string):ThunkTasksType => (dispatch: Dispatch) => {
     todolistsAPI.createTask(todolistId, title)
         .then((res) => {
             const newTask = res.data.data.item

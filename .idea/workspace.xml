@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="198dbaf3-7f67-4bb2-bc80-4f30b18e82e3" name="Changes" comment="redux-thunk">
+    <list default="true" id="198dbaf3-7f67-4bb2-bc80-4f30b18e82e3" name="Changes" comment="refactoring reducers structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/API.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/API.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithReducers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithReducers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Task.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Task.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Todolist/Todolist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithReducers.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Task.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/featuries/Todolist/Task/Task.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/featuries/Todolist/Task/Task.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/featuries/Todolist/Todolist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/tasks-reducer.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/todolists-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todolists-reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todolists-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/todolists-tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todolists-tasks-reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/decorators/ReduxStoreProviderDecorator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/decorators/ReduxStoreProviderDecorator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/tasks-api.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/tasks-api.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +46,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/study projects/Todolist&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/study projects/socialNet&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs.jest.jest_package&quot;: &quot;D:/study projects/Todolist/node_modules/react-scripts&quot;,
@@ -65,21 +63,35 @@
       <recent name="D:\study projects\Todolist\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study projects\Todolist\src\featuries\Todolist" />
+      <recent name="D:\study projects\Todolist\src\featuries" />
+      <recent name="D:\study projects\Todolist\src\app" />
       <recent name="D:\study projects\Todolist\src\components\Input" />
       <recent name="D:\study projects\Todolist\src\components\Todolist" />
-      <recent name="D:\study projects\Todolist\src\components\Task" />
-      <recent name="D:\study projects\Todolist\src\components\Span" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.test:integration">
-    <configuration name="jest:integration" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="jest:integration" />
-      </scripts>
+  <component name="RunManager" selected="Jest.tasks-reducer.test.ts">
+    <configuration name="tasks should be added for todolists" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
       <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/state/tasks-reducer.test.ts" />
+      <test-names>
+        <test-name value="tasks should be added for todolists" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="tasks-reducer.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/src/state/tasks-reducer.test.ts" />
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -112,23 +124,13 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="test:integration" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="test:integration" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.storybook" />
         <item itemvalue="npm.test" />
         <item itemvalue="npm.start" />
-        <item itemvalue="npm.test:integration" />
-        <item itemvalue="npm.jest:integration" />
+        <item itemvalue="Jest.tasks-reducer.test.ts" />
+        <item itemvalue="Jest.tasks should be added for todolists" />
+        <item itemvalue="npm.storybook" />
       </list>
     </recent_temporary>
   </component>
@@ -158,7 +160,13 @@
       <workItem from="1652170119421" duration="7000" />
       <workItem from="1652346403346" duration="146000" />
       <workItem from="1652426943239" duration="756000" />
-      <workItem from="1652514093532" duration="6038000" />
+      <workItem from="1652514093532" duration="7436000" />
+      <workItem from="1652531171016" duration="8000000" />
+      <workItem from="1652540020966" duration="28000" />
+      <workItem from="1652604766836" duration="7144000" />
+      <workItem from="1652612032864" duration="5608000" />
+      <workItem from="1652689371457" duration="3820000" />
+      <workItem from="1652693244225" duration="3002000" />
     </task>
     <task id="LOCAL-00001" summary="fixed project">
       <created>1650369727677</created>
@@ -356,7 +364,140 @@
       <option name="project" value="LOCAL" />
       <updated>1652441957532</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="migration to new types">
+      <created>1652524983413</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1652524983413</updated>
+    </task>
+    <task id="LOCAL-00030" summary="refactoring Todo stories">
+      <created>1652525038451</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1652525038451</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fixed the tests">
+      <created>1652525083384</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1652525083384</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added new reducer">
+      <created>1652535536074</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1652535536075</updated>
+    </task>
+    <task id="LOCAL-00033" summary="added new tests">
+      <created>1652535554878</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1652535554878</updated>
+    </task>
+    <task id="LOCAL-00034" summary="added ThunkCreator">
+      <created>1652539891571</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1652539891571</updated>
+    </task>
+    <task id="LOCAL-00035" summary="changed renderComponent">
+      <created>1652539913475</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1652539913475</updated>
+    </task>
+    <task id="LOCAL-00036" summary="added applyMiddleware">
+      <created>1652539932367</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1652539932367</updated>
+    </task>
+    <task id="LOCAL-00037" summary="refactoring typing">
+      <created>1652610995591</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1652610995591</updated>
+    </task>
+    <task id="LOCAL-00038" summary="added dispatch(various thunks)">
+      <created>1652616630469</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1652616630469</updated>
+    </task>
+    <task id="LOCAL-00039" summary="сreated thunks and refactoring add task for todolist">
+      <created>1652616675901</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1652616675901</updated>
+    </task>
+    <task id="LOCAL-00040" summary="fixed the work after changes in the project">
+      <created>1652616738270</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1652616738270</updated>
+    </task>
+    <task id="LOCAL-00041" summary="any changes">
+      <created>1652616769001</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1652616769001</updated>
+    </task>
+    <task id="LOCAL-00042" summary="added thunk (create todo)">
+      <created>1652617137667</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1652617137667</updated>
+    </task>
+    <task id="LOCAL-00043" summary="added new thunks">
+      <created>1652617648630</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1652617648630</updated>
+    </task>
+    <task id="LOCAL-00044" summary="refactoring code on task-reducer">
+      <created>1652693364603</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1652693364603</updated>
+    </task>
+    <task id="LOCAL-00045" summary="refactoring code on todo-reducer">
+      <created>1652693380395</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1652693380395</updated>
+    </task>
+    <task id="LOCAL-00046" summary="refactoring typing">
+      <created>1652693640157</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1652693640157</updated>
+    </task>
+    <task id="LOCAL-00047" summary="refactoring reducers structure">
+      <created>1652695126466</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1652695126466</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,24 +515,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changes" />
-    <MESSAGE value="changed rendering for React 18" />
-    <MESSAGE value="another changes" />
-    <MESSAGE value="added stories" />
-    <MESSAGE value="//" />
-    <MESSAGE value="added decoration" />
-    <MESSAGE value="added addons" />
-    <MESSAGE value="integration" />
-    <MESSAGE value="added snapshot tests" />
-    <MESSAGE value="any changes" />
-    <MESSAGE value="added new snapshot tests" />
-    <MESSAGE value="added axios" />
-    <MESSAGE value="added todo-api-stories" />
-    <MESSAGE value="created todolistAPI" />
-    <MESSAGE value="changes typing" />
-    <MESSAGE value="created tasks-api.stories" />
-    <MESSAGE value="created tasks-api-stories" />
-    <MESSAGE value="added tasksAPI" />
     <MESSAGE value="generic typing taskType" />
     <MESSAGE value="fixed typing" />
     <MESSAGE value="added typing UpdateTask" />
@@ -399,6 +522,24 @@
     <MESSAGE value="сhanged api request" />
     <MESSAGE value="changed tasks stories" />
     <MESSAGE value="redux-thunk" />
-    <option name="LAST_COMMIT_MESSAGE" value="redux-thunk" />
+    <MESSAGE value="migration to new types" />
+    <MESSAGE value="refactoring Todo stories" />
+    <MESSAGE value="fixed the tests" />
+    <MESSAGE value="added new reducer" />
+    <MESSAGE value="added new tests" />
+    <MESSAGE value="added ThunkCreator" />
+    <MESSAGE value="changed renderComponent" />
+    <MESSAGE value="added applyMiddleware" />
+    <MESSAGE value="added dispatch(various thunks)" />
+    <MESSAGE value="сreated thunks and refactoring add task for todolist" />
+    <MESSAGE value="fixed the work after changes in the project" />
+    <MESSAGE value="any changes" />
+    <MESSAGE value="added thunk (create todo)" />
+    <MESSAGE value="added new thunks" />
+    <MESSAGE value="refactoring code on task-reducer" />
+    <MESSAGE value="refactoring code on todo-reducer" />
+    <MESSAGE value="refactoring typing" />
+    <MESSAGE value="refactoring reducers structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring reducers structure" />
   </component>
 </project>

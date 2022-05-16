@@ -1,5 +1,5 @@
 import {v1} from 'uuid';
-import {todolistsAPI, TodolistType} from "../API/API";
+import {todolistsAPI, TodolistType} from "../../API/API";
 import {ThunkAction} from "redux-thunk";
 
 

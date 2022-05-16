@@ -1,7 +1,7 @@
 import React from 'react'
 import {action} from "@storybook/addon-actions";
 import {Task} from "./Task";
-import {TaskPriorities, TaskStatuses} from "../../API/API";
+import {TaskPriorities, TaskStatuses} from "../../../API/API";
 
 
 export default {
