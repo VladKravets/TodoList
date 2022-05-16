@@ -3,22 +3,6 @@ import {todolistsAPI, TodolistType} from "../API/API";
 import {ThunkAction} from "redux-thunk";
 
 
-export type FilterValuesType = "all" | "active" | "completed";
-export type TodolistDomainType = TodolistType & {
-    filter: FilterValuesType
-}
-export type AddTodolistActionType = ReturnType<typeof addTodolistAC>
-export type RemoveTodolistActionType = ReturnType<typeof removeTodolistAC>
-export type SetTodolistType = ReturnType<typeof setTodolistsAC>
-type ActionsType =
-    | RemoveTodolistActionType
-    | AddTodolistActionType
-    | ReturnType<typeof changeTodolistTitleAC>
-    | ReturnType<typeof changeTodolistFilterAC>
-    | SetTodolistType
-
-const initialState: Array<TodolistDomainType> = []
-
 export const todolistsReducer = (state: Array<TodolistDomainType> = initialState, action: ActionsType): Array<TodolistDomainType> => {
     switch (action.type) {
         case 'REMOVE-TODOLIST': {
@@ -108,3 +92,21 @@ export const changeTodolistTitleTC = (todolistId: string, title: string): ThunkT
             dispatch(changeTodolistTitleAC(todolistId, title))
         })
 }
+
+//types
+
+export type FilterValuesType = "all" | "active" | "completed";
+export type TodolistDomainType = TodolistType & {
+    filter: FilterValuesType
+}
+export type AddTodolistActionType = ReturnType<typeof addTodolistAC>
+export type RemoveTodolistActionType = ReturnType<typeof removeTodolistAC>
+export type SetTodolistType = ReturnType<typeof setTodolistsAC>
+type ActionsType =
+    | RemoveTodolistActionType
+    | AddTodolistActionType
+    | ReturnType<typeof changeTodolistTitleAC>
+    | ReturnType<typeof changeTodolistFilterAC>
+    | SetTodolistType
+
+const initialState: Array<TodolistDomainType> = []

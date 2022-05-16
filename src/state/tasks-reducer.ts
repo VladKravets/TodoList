@@ -8,21 +8,6 @@ import {TaskStatuses, TaskType, todolistsAPI} from "../API/API";
 import {Dispatch} from "redux";
 import {AppRootStateType} from "./store";
 
-
-type ActionsType =
-    | ReturnType<typeof removeTaskAC>
-    | ReturnType<typeof addTaskAC>
-    | ReturnType<typeof changeTaskStatusAC>
-    | ReturnType<typeof changeTaskTitleAC>
-    | AddTodolistActionType
-    | RemoveTodolistActionType
-    | SetTodolistType
-    | ReturnType<typeof fetchTasksAC>
-
-const initialState: TasksStateType = {
-    count: []
-}
-
 export const tasksReducer = (state: TasksStateType = initialState, action: ActionsType): TasksStateType => {
     switch (action.type) {
         case 'REMOVE-TASK': {
@@ -180,3 +165,17 @@ export const updateTaskStatusTC = (taskId: string, todolistId: string, status: T
     }
 }
 
+//types
+type ActionsType =
+    | ReturnType<typeof removeTaskAC>
+    | ReturnType<typeof addTaskAC>
+    | ReturnType<typeof changeTaskStatusAC>
+    | ReturnType<typeof changeTaskTitleAC>
+    | AddTodolistActionType
+    | RemoveTodolistActionType
+    | SetTodolistType
+    | ReturnType<typeof fetchTasksAC>
+
+const initialState: TasksStateType = {
+    count: []
+}
