@@ -9,7 +9,7 @@ import {
     Grid,
     IconButton,
     LinearProgress,
-    Paper,
+    Paper, Snackbar,
     Toolbar,
     Typography
 } from '@material-ui/core';
@@ -99,6 +99,7 @@ function App() {
     const status = useSelector<AppRootStateType,RequestStatusType>(state => state.app.status)
     return (
         <div className="App">
+            <Snackbar/>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="menu">

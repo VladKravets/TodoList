@@ -38,6 +38,9 @@ const initialGlobalState:AppRootStateType = {
                 deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low, description: ''
             }
         ]
+    },
+    app:{
+        status:'idle'
     }
 };
 
