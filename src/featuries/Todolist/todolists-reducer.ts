@@ -1,6 +1,7 @@
 import {v1} from 'uuid';
 import {todolistsAPI, TodolistType} from "../../API/API";
 import {ThunkAction} from "redux-thunk";
+import {setAppStatusAC, SetAppStatusType} from "../../app/app-reducer";
 
 
 export const todolistsReducer = (state: Array<TodolistDomainType> = initialState, action: ActionsType): Array<TodolistDomainType> => {
@@ -54,27 +55,35 @@ export const setTodolistsAC = (todolists: Array<TodolistType>) => ({
 export type ThunkTodolistType = ThunkAction<void, Array<TodolistDomainType>, unknown, ActionsType>
 
 export const fetchTodolistsTC = (): ThunkTodolistType => (dispatch) => {
+    dispatch(setAppStatusAC('loading'))
     todolistsAPI.getTodolists()
         .then((res) => {
             dispatch(setTodolistsAC(res.data))
+            dispatch(setAppStatusAC('succeeded'))
         })
 }
 export const addTodolistTC = (title: string): ThunkTodolistType => (dispatch) => {
+    dispatch(setAppStatusAC('loading'))
     todolistsAPI.createTodolist(title)
         .then((res) => {
             dispatch(addTodolistAC(title))
+            dispatch(setAppStatusAC('succeeded'))
         })
 }
 export const deleteTodolistTC = (todolistId: string): ThunkTodolistType => (dispatch) => {
+    dispatch(setAppStatusAC('loading'))
     todolistsAPI.deleteTodolist(todolistId)
         .then((res) => {
             dispatch(removeTodolistAC(todolistId))
+            dispatch(setAppStatusAC('succeeded'))
         })
 }
 export const changeTodolistTitleTC = (todolistId: string, title: string): ThunkTodolistType => (dispatch) => {
+    dispatch(setAppStatusAC('loading'))
     todolistsAPI.updateTodolist(todolistId, title)
         .then((res) => {
             dispatch(changeTodolistTitleAC(todolistId, title))
+            dispatch(setAppStatusAC('succeeded'))
         })
 }
 
@@ -93,5 +102,6 @@ type ActionsType =
     | ReturnType<typeof changeTodolistTitleAC>
     | ReturnType<typeof changeTodolistFilterAC>
     | SetTodolistType
+    | SetAppStatusType
 
 const initialState: Array<TodolistDomainType> = []
