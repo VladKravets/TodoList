@@ -1,0 +1,21 @@
+.error{
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.errorNum{
+    color: rgba(0,0,0,0.6);
+    text-shadow: 0px 0px 6px rgba(16, 5, 5, 0.7);
+    font-size: 150px;
+}
+.errorText{
+    color: rgba(0,0,0,0.6);
+    text-shadow: 0px 0px 6px rgba(248, 4, 4, 0.7);
+    font-size: 50px;
+}
+.errorSmile{
+    font-size: 50px;
+    text-shadow: 0px 0px 6px rgba(248, 4, 4, 0.7);
+}

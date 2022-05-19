@@ -25,6 +25,7 @@ type PropsType = {
     changeTodolistTitle: (id: string, newTitle: string) => void
     filter: FilterValuesType
     entityStatus: RequestStatusType
+    demo?: boolean
 }
 
 export const Todolist = React.memo(function (props: PropsType) {
