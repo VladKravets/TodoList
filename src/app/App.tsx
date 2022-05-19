@@ -18,7 +18,7 @@ import {AppRootStateType} from "./store";
 import {RequestStatusType} from "./app-reducer";
 import {LinearProgress} from "@mui/material";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {Login} from "../features/Login";
+import {Login} from "../features/TodolistsList/Login/Login";
 import {Error404} from "../components/error/Error404";
 
 type PropsType = {
