@@ -28,7 +28,6 @@ type PropsType = {
 function App({demo = false}: PropsType) {
     const status = useSelector<AppRootStateType, RequestStatusType>(state => state.app.status)
     return (
-        <BrowserRouter>
             <div className="App">
                 <ErrorSnackbar/>
                 <AppBar position="static">
@@ -53,7 +52,6 @@ function App({demo = false}: PropsType) {
                     </Routes>
                 </Container>
             </div>
-        </BrowserRouter>
     )
 }
 
