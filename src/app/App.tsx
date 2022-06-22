@@ -17,7 +17,7 @@ import {useSelector} from "react-redux";
 import {AppRootStateType} from "./store";
 import {RequestStatusType} from "./app-reducer";
 import {LinearProgress} from "@mui/material";
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {Login} from "../features/TodolistsList/Login/Login";
 import {Error404} from "../components/error/Error404";
 
@@ -28,30 +28,29 @@ type PropsType = {
 function App({demo = false}: PropsType) {
     const status = useSelector<AppRootStateType, RequestStatusType>(state => state.app.status)
     return (
-            <div className="App">
-                <ErrorSnackbar/>
-                <AppBar position="static">
-                    <Toolbar>
-                        <IconButton edge="start" color="inherit" aria-label="menu">
-                            <Menu/>
-                        </IconButton>
-                        <Typography variant="h6">
-                            News
-                        </Typography>
-                        <Button color="inherit">Login</Button>
-                    </Toolbar>
-                </AppBar>
-                {status === `loading` && <LinearProgress color={'secondary'}/>}
-                <Container fixed>
-                    <Routes>
-                        <Route path='/' element={<TodolistsList demo={demo}/>}/>
-                        <Route path='login' element={<Login/>}/>
-
-
-                        <Route path={'/*'} element={<Error404/>}/>
-                    </Routes>
-                </Container>
-            </div>
+        <div className="App">
+            <ErrorSnackbar/>
+            <AppBar position="static">
+                <Toolbar>
+                    <IconButton edge="start" color="inherit" aria-label="menu">
+                        <Menu/>
+                    </IconButton>
+                    <Typography variant="h6">
+                        News
+                    </Typography>
+                    <Button color="inherit">Login</Button>
+                </Toolbar>
+            </AppBar>
+            {status === `loading` && <LinearProgress color={'secondary'}/>}
+            <Container fixed>
+                <Routes>
+                    <Route path={'login'} element={<Login/>}/>
+                    <Route path={'/'} element={<TodolistsList/>}/>
+                    <Route path={'404'} element={<Error404/>}/>
+                    <Route path={'*'} element={<Navigate to={'404'}/>}/>
+                </Routes>
+            </Container>
+        </div>
     )
 }
 
