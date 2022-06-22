@@ -1,3 +1,9 @@
+import {Dispatch} from "redux";
+import {authAPI} from "../api/auth-api";
+import {setIsLoggedInAC} from "../features/TodolistsList/Login/login-reducer";
+import {handleServerAppError, handleServerNetworkError} from "../utils/utils";
+import {Simulate} from "react-dom/test-utils";
+
 export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
 
 const initialState = {
@@ -26,6 +32,26 @@ export const setAppErrorAC = (error: string | null) => {
         error
     } as const
 }
+
+
+//thunk
+export const initializeAppTC = () => (dispatch: Dispatch) => {
+    dispatch(setAppStatusAC('loading'))
+    authAPI.me()
+        .then(res => {
+            debugger
+            if (res.data.resultCode === 0) {
+                dispatch(setIsLoggedInAC(true));
+                dispatch(setAppStatusAC('succeeded'))
+            } else {
+                handleServerAppError(res.data, dispatch)
+            }
+        })
+        .catch((error) => {
+            handleServerNetworkError(error, dispatch)
+        })
+}
+
 
 //types
 export type setAppStatusType = ReturnType<typeof setAppStatusAC>

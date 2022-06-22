@@ -22,7 +22,7 @@ type FormikErrorType = {
 
 export const Login = () => {
     const dispatch = useDispatch()
-    const isLoggedIn = useSelector<AppRootStateType,boolean>(state => state.auth.isLoggedIn);
+    const isLoggedIn = useSelector<AppRootStateType, boolean>(state => state.auth.isLoggedIn);
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -62,9 +62,10 @@ export const Login = () => {
                     <FormControl>
                         <FormLabel>
                             <p>To log in get registered
-                                <a href={'https://social-network.samuraijs.com/'}
-                                   target={'_blank'}
-                                   rel="noopener noreferrer"> here
+                                <a
+                                    href={'https://social-network.samuraijs.com/'}
+                                    target={'_blank'}
+                                    rel="noopener noreferrer"> here
                                 </a>
                             </p>
                             <p>or use common test account credentials:</p>

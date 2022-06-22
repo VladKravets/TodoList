@@ -8,6 +8,12 @@ const instance = axios.create({
         'API-KEY': '3bb1f301-4343-478c-bd6d-e432168f19d7'
     }
 })
+
+export type MeResponseType = {
+        id: number,
+        email: string,
+        login: string
+}
 export type LoginParamsType = {
     email: string,
     password: string,
@@ -16,7 +22,10 @@ export type LoginParamsType = {
 }
 export const authAPI = {
     login(data: LoginParamsType) {
-        const promise = instance.post<LoginParamsType, AxiosResponse<ResponseType<{ userId?: number }>>>('auth/login', data)
-        return promise
+     return   instance.post<LoginParamsType, AxiosResponse<ResponseType<{ userId?: number }>>>('auth/login', data)
+
+    },
+    me() {
+        return  instance.get<ResponseType<MeResponseType>>('auth/me')
     }
 }
