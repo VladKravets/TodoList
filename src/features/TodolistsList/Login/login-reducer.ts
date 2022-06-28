@@ -13,7 +13,7 @@ export const slice = createSlice({
         name: "auth",
         initialState: initialState,
         reducers: {
-            setIsLoggedInAC(state, action: PayloadAction) {
+            setIsLoggedInAC(state, action: PayloadAction<{value:boolean}>) {
                 state.isLoggedIn = action.payload.value
             }
         }
@@ -30,7 +30,7 @@ export const loginTC = (data: LoginParamsType) => (dispatch: Dispatch) => {
     authAPI.login(data)
         .then(res => {
             if (res.data.resultCode === 0) {
-                dispatch(setIsLoggedInAC(true))
+                dispatch(setIsLoggedInAC({value:true}))
                 dispatch(setAppStatusAC('succeeded'))
             } else {
                 handleServerAppError(res.data, dispatch)
@@ -45,7 +45,7 @@ export const logoutTC = () => (dispatch: Dispatch) => {
     authAPI.logout()
         .then(res => {
             if (res.data.resultCode === 0) {
-                dispatch(setIsLoggedInAC(true))
+                dispatch(setIsLoggedInAC({value:true}))
                 dispatch(setAppStatusAC('succeeded'))
             } else {
                 handleServerAppError(res.data, dispatch)

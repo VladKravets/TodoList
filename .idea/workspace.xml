@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4da28817-6053-4b2c-9557-b68508ddb00e" name="Changes" comment="added functionality for user logout">
+    <list default="true" id="4da28817-6053-4b2c-9557-b68508ddb00e" name="Changes" comment="redux-toolkit added,">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/Login/login-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/Login/login-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +96,9 @@
       <workItem from="1656140289775" duration="15000" />
       <workItem from="1656142325344" duration="2831000" />
       <workItem from="1656146662828" duration="1215000" />
-      <workItem from="1656219627782" duration="3308000" />
+      <workItem from="1656219627782" duration="3496000" />
+      <workItem from="1656318297455" duration="3000" />
+      <workItem from="1656408302405" duration="1871000" />
     </task>
     <task id="LOCAL-00001" summary="any changes">
       <created>1652867952479</created>
@@ -170,7 +170,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655904965693</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="slice and other functionality created">
+      <created>1656224110392</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1656224110392</updated>
+    </task>
+    <task id="LOCAL-00012" summary="redux-toolkit added,">
+      <created>1656224158462</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1656224158462</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +211,9 @@
     <MESSAGE value="fixed logging issues in the app itself" />
     <MESSAGE value="fixed page refresh bug" />
     <MESSAGE value="added functionality for user logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="added functionality for user logout" />
+    <MESSAGE value="redux toolkit added, slice and other functionality created" />
+    <MESSAGE value="slice and other functionality created" />
+    <MESSAGE value="redux-toolkit added," />
+    <option name="LAST_COMMIT_MESSAGE" value="redux-toolkit added," />
   </component>
 </project>
